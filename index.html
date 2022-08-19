@@ -55,7 +55,12 @@
       <section class="hero section">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button type="button" class="btn btn-hero">Заказать услугу</button>
+          <button type="button" class="btn btn-hero" data-modal-open>Заказать услугу</button>
+        </div>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button class="modal-btn" data-modal-close></button>
+          </div>
         </div>
       </section>
       <!-- advantage Преимущества (спрятать заголовок)-->
@@ -108,16 +113,15 @@
           <h2 class="title">Чем мы занимаемся</h2>
           <ul class="list work-list">
             <li class="item">
-              <!-- position -->
-              <!-- <div class="position-box">
-                <p class="position">Десктопные приложения</p> -->
+              <p class="text-overlay">Десктопні додатки</p>
                 <img src="./images/note-1.jpg" alt="работа за столом на компьютере" width="370" height="294" />
-            <!-- </div> -->
             </li>
             <li class="item">
+              <p class="text-overlay">Мобільні додатки</p>
               <img src="./images/note-2.jpg" alt="работа за компьютером на фоне мобильного телефона в руках" width="370" height="294" />
             </li>
             <li class="item">
+              <p class="text-overlay">Дизайнерські рішення</p>
               <img src="./images/note-3.jpg" alt="работа на планшете на фоне рабочего стола с компьютером" width="370" height="294" />
             </li>
           </ul>
@@ -362,5 +366,6 @@
       </div>
      
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
