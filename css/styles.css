@@ -283,13 +283,15 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  transition: transform var(--duration) var(--timing-function);
+
   background-color: var(--bgc-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
 }
 
 .modal-btn {
@@ -309,13 +311,14 @@ img {
   background-position: 50% 50%;
 }
 
-.is-hidden {
+.backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  /* transform: scale(1);
-  transform: scale(0);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-80%, -80%) rotate(180deg) scale(0);
 }
 
 /* advantage */
@@ -615,11 +618,10 @@ footer .soc-icon {
   flex-basis: calc(100% / 3 - var(--margin30));
   margin-left: var(--margin30);
   margin-top: var(--margin30);
-  overflow: hidden;
 }
 
 .portfolio-card-link {
-  display: inline-block;
+  display: block;
 }
 
 .portfolio-card-link:hover,
@@ -658,6 +660,6 @@ footer .soc-icon {
   color: var(--bgc-white-color);
 }
 
-/* .portfolio-card-link:hover .overlay-card-text {
+.portfolio-card-link:hover .overlay-card-text {
   transform: translateY(0);
-} */
+}
