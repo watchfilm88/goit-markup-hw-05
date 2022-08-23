@@ -26,8 +26,7 @@
 .link {
   text-decoration: none;
   font-style: normal;
-  transition: color var(--duration) var(--timing-function),
-    box-shadow var(--duration) var(--timing-function);
+  transition: color var(--duration) var(--timing-function);
 }
 
 .title {
@@ -38,17 +37,19 @@
 }
 
 .btn {
-  transition: color var(--duration) var(--timing-function),
-    background-color var(--duration) var(--timing-function);
-
   border: none;
   cursor: pointer;
+  transition: color var(--duration) var(--timing-function),
+    background-color var(--duration) var(--timing-function),
+    box-shadow var(--duration) var(--timing-function);
+
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
   text-align: center;
+
   color: var(--text-dark-color);
   background-color: var(--bgc-light-grey-color);
 }
@@ -277,18 +278,19 @@ img {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity var(--duration) var(--timing-function),
+    visibility var(--duration) var(--timing-function);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
   border-radius: 4px;
-  transform: translate(-50%, -50%);
   transition: transform var(--duration) var(--timing-function);
-
   background-color: var(--bgc-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -305,10 +307,13 @@ img {
   border-radius: 50%;
   cursor: pointer;
 
-  background-color: var(--bgc-white-color);
-  background-image: url(/images/close-black-cross.svg);
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-color: transparent;
+}
+
+.icon-cross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .backdrop.is-hidden {
@@ -379,8 +384,10 @@ img {
   left: 0;
   bottom: 0;
   width: 100%;
-  display: block;
-  padding: 27px 0;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   font-weight: 700;
   font-size: 14px;
@@ -456,6 +463,8 @@ img {
   border-radius: 50%;
 
   fill: #afb1b8;
+  transition: fill var(--duration) var(--timing-function),
+    background-color var(--duration) var(--timing-function);
 }
 
 .team-soc-link:hover,
@@ -561,7 +570,7 @@ footer .soc-icon {
 }
 
 .team-soc-link {
-  transition: color var(--duration) var(--timing-function),
+  transition: fill var(--duration) var(--timing-function),
     background-color var(--duration) var(--timing-function);
 }
 
@@ -649,7 +658,7 @@ footer .soc-icon {
   width: 100%;
   height: 100%;
   padding: 63px 24px;
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform var(--duration) var(--timing-function);
 
   font-size: 18px;
@@ -662,4 +671,8 @@ footer .soc-icon {
 
 .portfolio-card-link:hover .overlay-card-text {
   transform: translateY(0);
+}
+
+.portfolio-card-link .link {
+  transition: box-shadow var(--duration) var(--timing-function);
 }
